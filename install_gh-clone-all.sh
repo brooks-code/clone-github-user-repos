@@ -26,24 +26,37 @@
 # Date:         2026-04-06
 # Listening:    Any other name by Thomas Newman (1999)
 ######################################################################
-
 set -e
 
 REPO="brooks-code/clone-github-user-repos"
 VERSION="v1.0.0"
-PACKAGE="gh-clone-all_${VERSION}_all.deb"
-DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${VERSION}/${PACKAGE}"
-COMMAND_NAME="gh-clone-all" 
+PKG="gh-clone-all_${VERSION#v}_all.deb"
+DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${VERSION}/${PKG}"
+CMD="gh-clone-all"
 
-echo "Downloading ${PACKAGE} from ${DOWNLOAD_URL}..."
-curl -L -o "${PACKAGE}" "${DOWNLOAD_URL}"
+echo "Downloading ${PKG} from ${DOWNLOAD_URL}..."
+curl -L -o "${PKG}" "${DOWNLOAD_URL}"
 
-echo "Installing ${PACKAGE}..."
-sudo dpkg -i "${PACKAGE}" || sudo apt-get install -f -y
+# Try installing; if dependencies fail, attempt to fix and reinstall
+echo "Installing ${PKG}..."
+if sudo dpkg -i "${PKG}"; then
+  INSTALL_OK=1
+else
+  sudo apt-get update
+  if sudo apt-get install -f -y && sudo dpkg -i "${PKG}"; then
+    INSTALL_OK=1
+  else
+    INSTALL_OK=0
+  fi
+fi
 
 echo "Cleaning up the package..."
-rm -f "${PACKAGE}"
+rm -f "${PKG}"
 
-echo "Installation successful!"
- 
-echo "Running ${COMMAND_NAME} once... (hit ctrl + C to abort)."
+if [ "${INSTALL_OK}" -eq 1 ]; then
+  echo "Installation successful!"
+  echo "Running ${CMD} once... (hit ctrl + C to abort)."
+else
+  echo "Installation failed." >&2
+  exit 1
+fi
