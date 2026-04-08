@@ -29,7 +29,7 @@
 
 set -e
 
-REPO="brooks-code/clone-github-user-repos "
+REPO="brooks-code/clone-github-user-repos"
 PACKAGE="gh-clone-all.deb"
 VERSION="v1.0.0"
 DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${VERSION}/${PACKAGE}"
