@@ -56,7 +56,8 @@ rm -f "${PKG}"
 if [ "${INSTALL_OK}" -eq 1 ]; then
   echo "Installation successful!"
   echo "Running ${CMD} once... (hit ctrl + C to abort)."
-  gh-clone-all
+  hash -r 
+  "${CMD}"
 else
   echo "Installation failed." >&2
   exit 1
