@@ -170,6 +170,14 @@ Cloning into 'Spoon-Knife'...
 Cloning into 'Hello-World'...
 ```
 
+## Removal instructions
+
+Just run:
+
+```bash
+sudo apt remove gh-clone-all
+```
+
 ## Limitations
 
 > [!NOTE]
