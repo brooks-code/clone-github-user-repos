@@ -107,9 +107,8 @@ USERNAME=octocat ./gh-clone-all_script.sh
 - Or edit the URL to include your username directly in the script
 
 ```bash
-# Replace the USERNAME
-curl -s "https://api.github.com/users/USERNAME/repos?per_page=100" \
-...
+# Replace the USERNAME in the line below
+curl -s "https://api.github.com/users/USERNAME/repos?per_page=100"
 ```
 
 ### Build the `.deb` by yourself
@@ -206,4 +205,4 @@ The source code is provided under the [Unlicense](https://unlicense.org/) licens
 
 ![Banner Image](/img/crescent_earth.jpg "Earthrise.")
 
-*Just to [see](https://ucly.hal.science/hal-05184143v1) the [view](https://chopplet.canalblog.com/archives/2024/01/02/40162097.html). Thank you [NASA](https://www.flickr.com/photos/nasahqphoto/)!*
+*Just to [see](https://ucly.hal.science/hal-05184143v1) the [view](https://chopplet.canalblog.com/archives/2024/01/02/40162097.html).*
