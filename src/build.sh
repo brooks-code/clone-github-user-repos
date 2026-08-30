@@ -15,7 +15,7 @@
 #             gh-clone-all octocat
 #           Or run without args and follow the prompt.
 #
-# Maintainer: brkln <github.com/brooks-code>
+# Maintainer: brkln <github.com/hyperphantasia>
 # Version:    1.0.0
 # Architecture: all
 # Dependencies (runtime): curl, git, awk, grep, sed, findutils
@@ -39,7 +39,7 @@ Version: 1.0.0
 Section: utils
 Priority: optional
 Architecture: all
-Maintainer: brkln <github.com/brooks-code>
+Maintainer: brkln <github.com/hyperphantasia>
 Depends: curl, git, awk, grep, sed, findutils
 Description: Clone all public GitHub repositories for a given username
  A simple helper that clones all public repositories 

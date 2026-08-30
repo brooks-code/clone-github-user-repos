@@ -22,13 +22,13 @@
 #   Run this script to automatically download and install the specified
 #   package from its GitHub release URL.
 #
-# Author:       github.com/brooks-code
+# Author:       github.com/hyperphantasia
 # Date:         2026-04-06
 # Listening:    Any other name by Thomas Newman (1999)
 ######################################################################
 set -e
 
-REPO="brooks-code/clone-github-user-repos"
+REPO="hyperphantasia/clone-github-user-repos"
 VERSION="v1.0.0"
 PKG="gh-clone-all_${VERSION#v}_all.deb"
 DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${VERSION}/${PKG}"

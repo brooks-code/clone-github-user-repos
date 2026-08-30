@@ -91,7 +91,7 @@ Just run the command below under Ubuntu/Debian and wait for the script to execut
 - Download and execute the installation script:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/brooks-code/clone-github-user-repos/main/install_gh-clone-all.sh | bash
+curl -sL https://raw.githubusercontent.com/hyperphantasia/clone-github-user-repos/main/install_gh-clone-all.sh | bash
 ```
 
 ### Using the standalone script only
